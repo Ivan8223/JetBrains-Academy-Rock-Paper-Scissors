@@ -7,8 +7,30 @@ class GameProcessor:
         self.user_name = None
         self.user_score = None
 
+    def game_process(self):
+        print("Okay, let's start")
+
+        while True:
+            user_choice = input()
+
+            if user_choice == '!exit':
+                break
+
+            elif user_choice == '!rating':
+                print(f"Your rating: {self.user_score}")
+                continue
+
+            elif user_choice not in self.game_options:
+                print('Invalid input')
+                continue
+
+            self.play_game(user_choice)
+
+        print('Bye!')
+
     def play_game(self, user_choice):
         new_game = self._init_game()
+
         new_game.process_game(user_choice)
 
         self._update_user_score(new_game.get_game_result())
@@ -20,14 +42,13 @@ class GameProcessor:
         print(f"Hello, {self.user_name}")
         self.user_score = self._init_user_score_by_name()
 
+        return self
+
     def set_game_options(self, game_options):
-        self.game_options = game_options
+        if game_options:
+            self.game_options = game_options.split(',')
 
-    def get_user_score(self):
-        return self.user_score
-
-    def get_game_options(self):
-        return self.game_options
+        return self
 
     def _init_game(self):
         return RockPaperScissors(self.game_options)
