@@ -5,7 +5,7 @@
 <ul>
 <li>This is JetBrains Academy easy level project - Rock-Paper-Scissors.</li>
 
-<li>In folder Problems are located files with solutions of tasks in theory modules. </li>
+<li>In folder Topics are located files with solutions of tasks in theory modules. </li>
 
 <li>In folder Rock-Paper-Scissors/task/rps are located project tasks files.</li>
 </ul>

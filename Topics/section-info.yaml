@@ -2,3 +2,4 @@ content:
 - Methods and attributes
 - Sep and end arguments of print
 - Flush and file arguments of print
+- Math magic methods
